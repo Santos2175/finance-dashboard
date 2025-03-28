@@ -1,0 +1,25 @@
+@use 'sass:map';
+
+// Define breakpoints
+$breakpoints: (
+  'sm': 480px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1440px,
+);
+
+// responsive design mixin
+@mixin respond-to($breakpoint) {
+  $breakpoint: map.get($breakpoints, $breakpoint);
+
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// flex center mixin
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
