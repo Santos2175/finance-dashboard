@@ -1,0 +1,93 @@
+@use '../base/index' as *;
+@use '../utils/mixins' as *;
+
+.dashboard {
+  display: flex;
+  gap: 3.2rem;
+  padding: 0rem 3.2rem 3.2rem 3.2rem;
+
+  h2 {
+    margin-bottom: 2.4rem;
+  }
+
+  // overview section
+  &__overview {
+    background-color: $color-bg-primary;
+    padding: 1.6rem;
+    border-radius: 1.4rem;
+
+    .overview-cards {
+      display: grid;
+
+      @include respond-to('xl') {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.8rem;
+      }
+      // overview card
+      .overview-card {
+        min-width: 33.35rem;
+        padding: 2rem;
+        border: 1px solid $color-bg-gray;
+        border-radius: 1.4rem;
+
+        //   overview card header portion
+        &__header {
+          display: flex;
+          align-items: center;
+
+          .overview-card__logo {
+            width: 4.8rem;
+            height: 4.8rem;
+            @include flex-center;
+
+            img {
+              width: 3.2rem;
+              height: 3.2rem;
+            }
+          }
+
+          .overview-card__info {
+            &__title {
+              font-size: 1.8rem;
+              line-height: 2.4rem;
+              font-weight: 600;
+              margin-bottom: 0.9rem;
+            }
+
+            &__description {
+              display: flex;
+              align-items: center;
+              font-weight: 400;
+
+              img {
+                width: 1.4rem;
+                height: 1.4rem;
+                margin-right: 0.4rem;
+              }
+            }
+          }
+        }
+
+        //   line divider
+        .line-divider {
+          margin: 2.125rem 0;
+          border: 1px solid $color-bg-gray;
+        }
+
+        //   overview card price section
+        &__price {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          &__amount {
+            font-size: 2.8rem;
+            line-height: 100%;
+            font-weight: 600;
+            letter-spacing: -0.2rem;
+          }
+        }
+      }
+    }
+  }
+}
