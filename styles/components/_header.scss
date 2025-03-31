@@ -1,0 +1,78 @@
+@use '../base/index' as *;
+@use '../utils/mixins' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  padding: 3.2rem;
+
+  // search portion
+  .search {
+    flex: 1;
+    display: flex;
+    padding: 2rem;
+    border-radius: 10rem;
+    background-color: $color-bg-primary;
+
+    img {
+      margin-right: 1rem;
+    }
+
+    input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      font-weight: 400;
+    }
+  }
+
+  // users profile sections
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    width: 35rem;
+    background-color: $color-bg-primary;
+    border-radius: 10rem;
+
+    // notification and message
+    .notification,
+    .message {
+      width: 6.6rem;
+      border-radius: 10rem;
+      padding: 1.2rem 2.1rem;
+      border: 1px solid $color-bg-gray;
+      @include flex-center;
+
+      img {
+        height: 2.4rem;
+        width: 2.4rem;
+      }
+    }
+
+    // user name with avatar
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      &__avatar {
+        width: 4.8rem;
+        height: 4.8rem;
+        background-color: $color-bg-tertiary;
+        border-radius: 50%;
+        @include flex-center;
+      }
+
+      &__name {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        font-weight: 400;
+      }
+    }
+  }
+}

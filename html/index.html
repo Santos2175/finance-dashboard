@@ -9,57 +9,110 @@
     <link rel="stylesheet" href="../styles.css" />
     <title>Finance Dashboard</title>
   </head>
-  <body class="container">
-    <!-- sidebar -->
-    <aside class="sidebar">
-      <div class="logo">
-        <img src="/assets/gallery.svg" alt="logo svg" />
-      </div>
 
-      <!-- sidebar navigation lists -->
-      <!-- sidebar list 1 -->
-      <ul class="sidebar__list1">
-        <li class="sidebar__list1-item">
-          <img src="/assets/dashboard.svg" alt="dashboard logo" />
-          Dashboard
-        </li>
-        <li class="sidebar__list1-item">
-          <img src="/assets/Calendar.svg" alt="calendar logo" />Schedule
-        </li>
-        <li class="sidebar__list1-item">
-          <img src="/assets/sms.svg" alt="sms logo" />Message
-        </li>
-        <li class="sidebar__list1-item">
-          <img src="/assets/Chart.svg" alt="chart logo" />Analytics
-        </li>
-        <li class="sidebar__list1-item">
-          <img src="/assets/profile-2user.svg" alt="team logo" />Team
-        </li>
-      </ul>
-
-      <!-- line divider -->
-      <hr class="sidebar__line-divider" />
-
-      <!-- sidebar list 2 -->
-      <ul class="sidebar__list2">
-        <div>
-          <li class="sidebar__list2-item">
-            <img src="/assets/user.svg" alt="profile logo" />Profile
-          </li>
-          <li class="sidebar__list2-item">
-            <img src="/assets/setting.svg" alt="settings logo" />Settings
-          </li>
+  <body>
+    <div class="container">
+      <!-- sidebar -->
+      <aside class="sidebar">
+        <!-- company logo -->
+        <div class="logo">
+          <img src="/assets/gallery.svg" alt="logo svg" />
         </div>
 
-        <div>
-          <li class="sidebar__list2-item">
-            <img src="/assets/info-circle.svg" alt="info logo" />Help
-          </li>
-          <li class="sidebar__list2-item">
-            <img src="/assets/login.svg" alt="login logo" />Logout
-          </li>
-        </div>
-      </ul>
-    </aside>
+        <!-- sidebar navigation lists -->
+        <!-- sidebar list 1 -->
+        <nav>
+          <ul class="sidebar__list1">
+            <li class="sidebar__list1-item">
+              <img src="/assets/dashboard.svg" alt="dashboard logo" />
+              Dashboard
+            </li>
+            <li class="sidebar__list1-item">
+              <img src="/assets/Calendar.svg" alt="calendar logo" />Schedule
+            </li>
+            <li class="sidebar__list1-item">
+              <img src="/assets/sms.svg" alt="sms logo" />Message
+            </li>
+            <li class="sidebar__list1-item">
+              <img src="/assets/Chart.svg" alt="chart logo" />Analytics
+            </li>
+            <li class="sidebar__list1-item">
+              <img src="/assets/profile-2user.svg" alt="team logo" />Team
+            </li>
+          </ul>
+
+          <!-- line divider -->
+          <hr class="sidebar__line-divider" />
+
+          <!-- sidebar list 2 -->
+          <ul class="sidebar__list2">
+            <!-- profile-setting group-->
+            <div>
+              <li class="sidebar__list2-item">
+                <img src="/assets/user.svg" alt="profile logo" />Profile
+              </li>
+              <li class="sidebar__list2-item">
+                <img src="/assets/setting.svg" alt="settings logo" />Settings
+              </li>
+            </div>
+
+            <!-- help-logout group-->
+            <div>
+              <li class="sidebar__list2-item">
+                <img src="/assets/info-circle.svg" alt="info logo" />Help
+              </li>
+              <li class="sidebar__list2-item">
+                <img src="/assets/login.svg" alt="login logo" />Logout
+              </li>
+            </div>
+          </ul>
+        </nav>
+      </aside>
+
+      <section class="content">
+        <!-- common header portion for all contents-->
+        <header class="header">
+          <!-- search box -->
+          <div class="search">
+            <img src="/assets/search-normal.svg" alt="search icon" />
+            <input type="text" placeholder="Search here..." />
+          </div>
+
+          <!-- profile section -->
+          <div class="profile">
+            <!-- notification section -->
+            <div class="notification">
+              <img
+                src="/assets/notification-bing.svg"
+                alt="notification icon" />
+            </div>
+
+            <!-- message section -->
+            <div class="message">
+              <img src="/assets/message-text.svg" alt="message icon" />
+            </div>
+
+            <!-- user profile:name,avatar section -->
+            <div class="user-profile">
+              <!-- user avatar -->
+              <div class="user-profile__avatar">
+                <img src="/assets/gallery.svg" alt="avatar logo" />
+              </div>
+
+              <!-- user name -->
+              <span class="user-profile__name">Mirie Kiritani</span>
+
+              <!-- caret logo -->
+              <div class="user-profile__caret-down">
+                <img src="/assets/arrow-down.svg" alt="arrow-down icon" />
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- main content portion-->
+        <main></main>
+      </section>
+    </div>
   </body>
 </html>
