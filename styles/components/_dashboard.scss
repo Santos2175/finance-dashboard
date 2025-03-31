@@ -41,6 +41,33 @@
           padding: 2rem;
           border: 1px solid $color-bg-gray;
           border-radius: 1.4rem;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $color-bg-purple;
+
+            .overview-card__header {
+              .overview-card__info {
+                &__title {
+                  color: $color-text-white;
+                }
+
+                &__description {
+                  color: $color-text-lighten-gray;
+                }
+              }
+            }
+
+            .overview-card__price {
+              &__amount {
+                color: $color-text-white;
+              }
+            }
+
+            .line-divider {
+              background-color: $color-text-lighten-gray;
+            }
+          }
 
           //   overview card header portion
           &__header {
@@ -50,6 +77,9 @@
             .overview-card__logo {
               width: 4.8rem;
               height: 4.8rem;
+              border: 1px solid $color-bg-gray;
+              border-radius: 50%;
+              margin-right: 0.9rem;
               @include flex-center;
 
               img {
@@ -70,6 +100,7 @@
                 display: flex;
                 align-items: center;
                 font-weight: 400;
+                color: $color-text-lightgray;
 
                 img {
                   width: 1.4rem;
