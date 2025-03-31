@@ -10,84 +10,247 @@
     margin-bottom: 2.4rem;
   }
 
-  // overview section
-  &__overview {
-    background-color: $color-bg-primary;
-    padding: 1.6rem;
-    border-radius: 1.4rem;
+  // dashboard group1
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
 
-    .overview-cards {
-      display: grid;
+    // common for overview, analytics, saving plan, recent transaction
+    &__overview,
+    &__analytics,
+    &__saving-plan,
+    &__recent-transactions {
+      background-color: $color-bg-primary;
+      padding: 1.6rem;
+      border-radius: 1.4rem;
+    }
 
-      @include respond-to('xl') {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.8rem;
-      }
-      // overview card
-      .overview-card {
-        min-width: 33.35rem;
-        padding: 2rem;
-        border: 1px solid $color-bg-gray;
-        border-radius: 1.4rem;
+    // overview section
+    &__overview {
+      .overview-cards {
+        display: grid;
 
-        //   overview card header portion
-        &__header {
-          display: flex;
-          align-items: center;
+        @include respond-to('xl') {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.8rem;
+        }
+        // overview card
+        .overview-card {
+          min-width: 33.35rem;
+          padding: 2rem;
+          border: 1px solid $color-bg-gray;
+          border-radius: 1.4rem;
 
-          .overview-card__logo {
-            width: 4.8rem;
-            height: 4.8rem;
-            @include flex-center;
+          //   overview card header portion
+          &__header {
+            display: flex;
+            align-items: center;
 
-            img {
-              width: 3.2rem;
-              height: 3.2rem;
-            }
-          }
-
-          .overview-card__info {
-            &__title {
-              font-size: 1.8rem;
-              line-height: 2.4rem;
-              font-weight: 600;
-              margin-bottom: 0.9rem;
-            }
-
-            &__description {
-              display: flex;
-              align-items: center;
-              font-weight: 400;
+            .overview-card__logo {
+              width: 4.8rem;
+              height: 4.8rem;
+              @include flex-center;
 
               img {
-                width: 1.4rem;
-                height: 1.4rem;
-                margin-right: 0.4rem;
+                width: 3.2rem;
+                height: 3.2rem;
+              }
+            }
+
+            .overview-card__info {
+              &__title {
+                font-size: 1.8rem;
+                line-height: 2.4rem;
+                font-weight: 600;
+                margin-bottom: 0.9rem;
+              }
+
+              &__description {
+                display: flex;
+                align-items: center;
+                font-weight: 400;
+
+                img {
+                  width: 1.4rem;
+                  height: 1.4rem;
+                  margin-right: 0.4rem;
+                }
               }
             }
           }
-        }
 
-        //   line divider
-        .line-divider {
-          margin: 2.125rem 0;
-          border: 1px solid $color-bg-gray;
-        }
+          //   line divider
+          .line-divider {
+            margin: 2.125rem 0;
+            border: 1px solid $color-bg-gray;
+          }
 
-        //   overview card price section
-        &__price {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          //   overview card price section
+          &__price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-          &__amount {
-            font-size: 2.8rem;
-            line-height: 100%;
-            font-weight: 600;
-            letter-spacing: -0.2rem;
+            &__amount {
+              font-size: 2.8rem;
+              line-height: 100%;
+              font-weight: 600;
+              letter-spacing: -0.2rem;
+            }
           }
         }
       }
     }
+
+    // analytics section
+
+    // common for saving-plan and recent transaction section
+    &__saving-plan,
+    &__recent-transactions {
+      min-width: 34.7rem;
+
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2.4rem;
+
+        h2 {
+          margin-bottom: 0;
+        }
+
+        .expand-term {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          font-weight: 500;
+        }
+      }
+
+      //   line divider
+      .line-divider {
+        margin: 2.4rem 0;
+        border: 1px solid $color-bg-gray;
+      }
+    }
+
+    // saving plan section
+    &__saving-plan {
+      // cards
+      .saving-plan__cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+
+        // card
+        .saving-plan__card {
+          padding: 0.8rem;
+
+          // card header
+          &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.4rem;
+
+            // title
+            &-title {
+              font-size: 1.6rem;
+              line-height: 2.4rem;
+              font-weight: 500;
+              color: $color-text-darkgray;
+            }
+
+            // description
+            &-description {
+              font-size: 1.2rem;
+              line-height: 100%;
+              color: $color-text-lightgray;
+            }
+          }
+
+          // card price section
+          &__price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.2rem;
+
+            // common
+            &__amount,
+            &__per-total,
+            &__percentage {
+              line-height: 100%;
+              font-weight: 600;
+            }
+
+            // amount
+            &__amount {
+              font-size: 2rem;
+              color: $color-text-darkgray;
+            }
+
+            // per total
+            &__per-total {
+              color: $color-text-lightgray;
+            }
+
+            // percentage
+            &__percentage {
+              font-size: 1.8rem;
+            }
+
+            // percentage color of card 1
+            .card1 {
+              color: $color-text-purple;
+            }
+
+            // percentage color of card 2
+            .card2 {
+              color: $color-text-yellow;
+            }
+
+            // percentage color of card 3
+            .card3 {
+              color: $color-text-green;
+            }
+          }
+
+          // bar
+          &__bar {
+            height: 0.8rem;
+            border-radius: 0.4rem;
+            background-color: $color-bg-gray;
+            overflow: hidden;
+
+            // card 1 with 48%
+            &__progress1 {
+              width: 48%;
+              height: 100%;
+              background-color: $color-bg-purple;
+              border-radius: 0.4rem;
+            }
+
+            // card 2 with 79%
+            &__progress2 {
+              width: 79%;
+              height: 100%;
+              background-color: $color-bg-yellow;
+              border-radius: 0.4rem;
+            }
+
+            // card 3 with 32%
+            &__progress3 {
+              width: 32%;
+              height: 100%;
+              background-color: $color-bg-green;
+              border-radius: 0.4rem;
+            }
+          }
+        }
+      }
+    }
+
+    // recent transaction section
   }
 }
