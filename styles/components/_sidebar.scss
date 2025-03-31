@@ -1,0 +1,56 @@
+@use '../base/index' as *;
+@use '../utils/mixins' as *;
+
+.sidebar {
+  width: 28rem;
+  min-height: 100vh;
+  background-color: $color-bg-primary;
+  padding: 3.2rem 0;
+
+  .logo {
+    width: 17.8rem;
+    height: 5.2rem;
+    margin: 0.3rem 6.6rem 3.3rem 3.6rem;
+    background-color: $color-bg-tertiary;
+    @include flex-center;
+
+    img {
+      height: 2.4rem;
+      width: 2.4rem;
+    }
+  }
+
+  //  sidebar navigation lists
+  &__list1,
+  &__list2 {
+    width: 25.8rem;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      font-size: 1.6rem;
+      line-height: 100%;
+      font-weight: 400;
+
+      img {
+        margin: 2rem 1.6rem 2rem 4.5rem;
+        height: 2.4rem;
+        width: 2.4rem;
+      }
+    }
+  }
+
+  &__list2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  //   sidebar line-divider
+  &__line-divider {
+    width: 21.9rem;
+    margin: 3.2rem 3.05rem;
+    color: $color-bg-gray;
+  }
+}
