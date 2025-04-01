@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
   const canvas = document.querySelector('.dashboard__group__analytics__graph');
-  const ctx = canvas.getContext('2d');
   const select = document.querySelector('.options');
   let chart;
 
@@ -17,12 +16,15 @@ document.addEventListener('DOMContentLoaded', function () {
     let yMax = 20000;
     let yStepSize = 5000;
 
+    // for weekly
     if (labelType === 'Weekly') {
       labels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
       data1 = [5000, 2000, 10000, 8000, 9000, 7000, 15000];
       data2 = [4000, 1800, 8000, 4000, 6000, 7200, 12000];
       yMax = 20000;
       yStepSize = 5000;
+
+      // for monthly
     } else if (labelType === 'Monthly') {
       labels = [
         'Jan',
@@ -48,6 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
       ];
       yMax = 50000;
       yStepSize = 10000;
+
+      // for yearly
     } else if (labelType === 'Yearly') {
       labels = [
         '2016',
@@ -71,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
       yStepSize = 20000;
     }
 
+    // chart to show data
     chart = new Chart(canvas, {
       type: 'line',
       data: {
@@ -159,12 +164,13 @@ document.addEventListener('DOMContentLoaded', function () {
         },
       },
     });
-    console.log('Chart.js version:', Chart.version);
   }
 
+  // add event listener to act on option change
   select.addEventListener('change', function () {
     createChart(this.value);
   });
 
+  // default weekly chart on page re-load
   createChart('Weekly');
 });
