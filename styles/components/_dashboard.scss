@@ -2,18 +2,22 @@
 @use '../utils/mixins' as *;
 
 .dashboard {
-  display: flex;
-  gap: 3.2rem;
   padding: 0rem 3.2rem 3.2rem 3.2rem;
+
+  @include respond-to('lg') {
+    display: flex;
+    gap: 3.2rem;
+  }
 
   h2 {
     margin-bottom: 2.4rem;
   }
 
   // dashboard group1
-  &__group {
+  &__group1,
+  &__group2 {
     display: flex;
-    flex-direction: column;
+    min-width: 36rem;
     gap: 3.2rem;
 
     // common for overview, analytics, saving plan, recent transaction
@@ -30,14 +34,15 @@
     &__overview {
       .overview-cards {
         display: grid;
+        gap: 1.8rem;
 
-        @include respond-to('xl') {
+        @include respond-to('md') {
           grid-template-columns: repeat(2, 1fr);
-          gap: 1.8rem;
         }
         // overview card
         .overview-card {
           min-width: 33.35rem;
+          max-width: 33.35rem;
           padding: 2rem;
           border: 1px solid $color-bg-gray;
           border-radius: 1.4rem;
@@ -137,18 +142,34 @@
     // analytics section
     &__analytics {
       max-height: 40.2rem;
-      padding: 2rem;
+      padding: 1rem;
+      max-width: 40rem;
+
+      h2 {
+        margin-bottom: 0;
+      }
+
+      @include respond-to('md') {
+        padding: 2rem;
+        max-width: 71.7rem;
+        min-width: 71.7rem;
+      }
 
       // header portion
       &__header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 2.4rem;
 
         &__labels {
           display: flex;
           align-items: center;
-          gap: 3.2rem;
+          gap: 1rem;
+
+          @include respond-to('md') {
+            gap: 3.2rem;
+          }
 
           // dot labels
           .dot {
@@ -206,6 +227,7 @@
     &__saving-plan,
     &__recent-transactions {
       min-width: 34.7rem;
+      max-width: 34.7rem;
 
       &__header {
         display: flex;
@@ -430,6 +452,27 @@
           }
         }
       }
+    }
+  }
+
+  &__group1 {
+    flex-direction: column;
+    margin-bottom: 3.2rem;
+
+    @include respond-to('lg') {
+      margin-bottom: 0;
+    }
+  }
+
+  &__group2 {
+    flex-direction: column;
+
+    @include respond-to('md') {
+      flex-direction: row;
+    }
+
+    @include respond-to('lg') {
+      flex-direction: column;
     }
   }
 }

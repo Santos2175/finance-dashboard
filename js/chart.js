@@ -5,7 +5,7 @@ let currentChart = null;
 
 // Function to initialize the chart with the canvas element
 export function initChart() {
-  const canvas = document.querySelector('.dashboard__group__analytics__graph');
+  const canvas = document.querySelector('.dashboard__group1__analytics__graph');
   const select = document.querySelector('.options');
 
   if (!canvas) {
@@ -51,7 +51,7 @@ function addDropdownEventListener(select) {
 
     // Get the canvas and clear it
     const canvas = document.querySelector(
-      '.dashboard__group__analytics__graph'
+      '.dashboard__group1__analytics__graph'
     );
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
