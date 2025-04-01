@@ -234,10 +234,28 @@
 
               <!-- analytics section -->
               <article class="dashboard__group__analytics">
-                <h2 class="heading-primary">Analytics</h2>
+                <!-- analytics header portion -->
+                <div class="dashboard__group__analytics__header">
+                  <h2 class="heading-primary">Analytics</h2>
+                  <div class="dashboard__group__analytics__header__labels">
+                    <p class="label"><span class="dot dot1"></span>Label 1</p>
+                    <p class="label"><span class="dot dot2"></span>Label 2</p>
+                    <select class="options" name="" id="">
+                      <option class="option" value="Weekly" selected>
+                        Weekly
+                      </option>
+                      <option class="option" value="Monthly">Monthly</option>
+                      <option class="option" value="Yearly">Yearly</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- analytics graph -->
+                <canvas class="dashboard__group__analytics__graph"></canvas>
               </article>
             </section>
 
+            <!-- dashboard group: Group divided for better layout -->
             <section class="dashboard__group">
               <!-- saving plan section -->
               <article class="dashboard__group__saving-plan">
@@ -472,5 +490,10 @@
         </main>
       </section>
     </div>
+
+    <!-- js files -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.js"></script>
+
+    <script src="../js/analytics.js" defer></script>
   </body>
 </html>
