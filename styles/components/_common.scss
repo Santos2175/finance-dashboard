@@ -1,0 +1,18 @@
+@use '../base/index' as *;
+
+.analytics,
+.message,
+.profile,
+.schedule,
+.settings,
+.team,
+.help {
+  padding: 3.2rem;
+
+  h2 {
+    font-size: 2rem;
+    line-height: 100%;
+    font-weight: 700;
+    color: $color-text-darkgray;
+  }
+}
