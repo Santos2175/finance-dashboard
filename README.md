@@ -1,4 +1,4 @@
-# INTUJI-FRONTEND-ASSOCIATE-CHALLENGE (Intuji)  [Project_Demo_Video_Link](https://drive.google.com/file/d/1Nz9mdBE0PC-If0YJ-52Hx5Ce8utS899C/view?usp=sharing)
+# FINANCE DASHBOARD
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -11,7 +11,7 @@
 - [Contact](#contact)
 
   ## Introduction
-  This project is a frontend assigment given by Intuji Team. It includes responsive frontend design built using HTML, SCSS and JavaScript.
+  This is a finance dashboard frontend app. It includes responsive frontend design built using HTML, SCSS and JavaScript.
 
   ## Features
   - Responsive UI for user interaction
